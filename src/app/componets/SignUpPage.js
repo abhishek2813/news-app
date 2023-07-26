@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { auth } from '../articles/firebase/firebase';
-import {
-    createUserWithEmailAndPassword
-} from "firebase/auth";
+// import { auth } from '../articles/firebase/firebase';
+// import {
+//     createUserWithEmailAndPassword
+// } from "firebase/auth";
 function SignUpPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,11 +28,11 @@ function SignUpPage() {
       return 
     }
     try {
-        const userData = await createUserWithEmailAndPassword(auth,
-            email,
-            password
-            )
-            console.log(userData);
+        // const userData = await createUserWithEmailAndPassword(auth,
+        //     email,
+        //     password
+        //     )
+        //     console.log(userData);
     } catch (error) {
         console.error("An error occured", error.message);
     }
