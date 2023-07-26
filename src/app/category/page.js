@@ -11,24 +11,11 @@ const Page = () => {
     setIsGridView(!isGridView);
   };
 
-  const country = 'us';
-  const apiKey = '09d603374172456c90bbab00eb1dd9c4';
-
-  const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=business&apiKey=${apiKey}`;
-
-  // Fetch data when the component mounts
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setArticles(data.articles);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
+    const storedFavorites = localStorage.getItem('favorites');
+    if (storedFavorites) {
+      setArticles(JSON.parse(storedFavorites));
+    }
   }, []);
 
   return (
