@@ -1,6 +1,6 @@
-"use client"
+
 import React, { useState } from 'react';
-// import { auth } from '../articles/firebase/firebase';
+// import { auth } from '../../../firebase/firebase';
 // import {
 //     signInWithEmailAndPassword
 // } from "firebase/auth";
@@ -19,7 +19,7 @@ function SignUpPage() {
   const handleSubmit = async() => {
     try {
         // const userData = await signInWithEmailAndPassword(auth, email, password);
-            console.log(userData);
+        //     console.log(userData);
     } catch (error) {
         console.error("An error occured", error.message);
     }
